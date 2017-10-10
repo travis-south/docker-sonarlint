@@ -4,6 +4,8 @@ This is a docker image for running sonarlint cli.
 
 ## Usage
 
+`cd` to your project and follow the instructions below.
+
 ### Running on standalone mode
 
 To run this on a *standalone* mode, run the command below. This will perform scan based on its default configuration.
