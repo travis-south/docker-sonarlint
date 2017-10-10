@@ -8,16 +8,18 @@ ENV SONARLINT_HOME=/opt/sonarlint \
 
 RUN apk update && apk add wget unzip
 
-RUN mkdir -p ${JMETER_HOME} \
+RUN mkdir -p ${SONARLINT_HOME} \
  && wget -O /tmp/sonarlint.zip https://bintray.com/sonarsource/Distribution/download_file?file_path=sonarlint-cli%2Fsonarlint-cli-${SONARLINT_VERSION}.zip \
- && cd /tmp
+ && cd /tmp \
  && unzip sonarlint.zip \
  && mv /tmp/sonarlint-cli-${SONARLINT_VERSION}/* ${SONARLINT_HOME} \
- && chmod -R +x ${SONARLINT_HOME}
+ && chmod -R +x ${SONARLINT_HOME} \
  && rm -rf /tmp/sonarlint.zip
+
+VOLUME /root/.sonarlint
 
 VOLUME /app
 
 WORKDIR /app
 
-ENTRYPOINT  ["${SONARLINT_HOME}/bin/sonarlint"]
+ENTRYPOINT  ["sonarlint"]
