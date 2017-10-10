@@ -1,0 +1,2 @@
+# Sonarlint docker image
+
