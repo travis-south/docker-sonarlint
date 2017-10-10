@@ -7,7 +7,7 @@ This is a docker image for running sonarlint cli.
 ### Running on standalone mode
 
 To run this on a *standalone* mode, run the command below. This will perform scan based on its default configuration.
-	```shell
+	```bash
 	docker run --rm -ti -v $PWD:/app travissouth/sonarlint
 	```
 
@@ -18,7 +18,7 @@ To run this on a *standalone* mode, run the command below. This will perform sca
 If you followed that, most likely your global config is located in `~/.sonarlint/conf/global.json`.
 
 Once done with global configuration, you can now run this using:
-	```shell
+	```bash
 	docker run --rm -ti -v $PWD:/app -v $HOME/.sonarlint:/root/.sonarlint travissouth/sonarlint -u
 	```
 
